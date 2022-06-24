@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anima</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Icon.ico">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+ 
+</head>
+<body>
+
+  <header>
+    <div class="nav-bar">
+      <a href="" class="logo">Anima</a>
+      <div class="navigation">
+        <div class="nav-items">
+          <i class="uil uil-times nav-close-btn"></i>
+          <a href="#"><i class="uil uil-home"></i> Home</a>
+          <a href="https://github.com/adittiyaasril/Anima"><i class="uil uil-document-layout-left"></i> Code</a>
+          <a href="https://jikan.moe"><i class="uil uil-envelope"></i> API</a>
+        </div>
+      </div>
+      <i class="uil uil-apps nav-menu-btn"></i>
+    </div>
+    <div class="scroll-indicator-container">
+      <div class="scroll-indicator-bar"></div>
+    </div>
+  </header>
+
+  <section class="home">
+    <div class="container">
+
+      <p>Explore Anime</p>
+      <form id="search_form">
+          <div class="form-group">
+              <label class="lab" for="search"></label>
+              <input type="text" placeholder="         Enter Keyword . . . . . ." name="search" id="search">
+
+          </div>
+
+      </form>
+
+  </div>
+  </section>
+
+  <section class="content">
+    <div id="search-results" class="container_1"></div>
+
+  <script>
+    //Javacript for the scroll indicator bar
+    window.addEventListener("scroll", () => {
+      const indicatorBar = document.querySelector(".scroll-indicator-bar");
+
+      const pageScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollValue = (pageScroll / height) * 100;
+
+      indicatorBar.style.width = scrollValue + "%";
+    });
+
+    //Responsive navigation menu toggle
+    const menuBtn = document.querySelector(".nav-menu-btn");
+    const closeBtn = document.querySelector(".nav-close-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      navigation.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      navigation.classList.remove("active");
+    });
+  </script>
+  
+  <script src="app.js"></script>
+
+</body>
+</html>
